@@ -6,6 +6,7 @@ body {
 
 .container {
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 textarea {
@@ -27,6 +28,7 @@ textarea {
 
 .description {
   white-space: pre-wrap;
+  color: #000000;
 }
 
 .time-block {
@@ -76,6 +78,7 @@ textarea {
 .col-md-10 {
   font-family: 'open_sansregular';
   font-size: 1.5rem;
+  color: #000000;
   padding-top: 30px;
   padding-left: 30px;
   vertical-align: middle;
