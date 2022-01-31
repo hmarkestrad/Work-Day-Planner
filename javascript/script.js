@@ -1,133 +1,64 @@
-/* ---- particles.js config ---- */
+// Display today's day and date
+var today = new Date();
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 120,
-      "density": {
-        "enable": true,
-        "value_area": 1000
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+let month = months[today.getMonth()];
+var date = month+' '+today.getDate()+', '+today.getFullYear();
+
+let displayTime = weekday[today.getDay()];
+var time = today.toLocaleString('en-US', { hour: 'numeric', minute:	"numeric", hour12: true });
+
+document.getElementById('currentDay').innerHTML = date+" "+displayTime+" "+time;
+
+$(document).ready(function() {
+    // saveBtn click listener 
+    $(".saveBtn").on("click", function() {
+        // Get nearby values of the description in JQuery
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+
+        // Save text in local storage
+        localStorage.setItem(time, text);
+    })
+
+    function timeTrack() {
+        //get current number of hours.
+        var timeNow = moment().hour();
+
+        // loop over time blocks
+        $(".time-block").each(function() {
+            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+
+            // To check the time and add the classes for background indicators
+            if (blockTime < timeNow) {
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+                $(this).addClass("past");
+            } else if (blockTime === timeNow) {
+                $(this).removeClass("past");
+                $(this).removeClass("future");
+                $(this).addClass("present");
+            } else {
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
+
+            }
+        })
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
 
+    // local storage Get Items
+    $("#hour0 .description").val(localStorage.getItem("hour0"));
+    $("#hour1 .description").val(localStorage.getItem("hour1"));
+    $("#hour2 .description").val(localStorage.getItem("hour2"));
+    $("#hour3 .description").val(localStorage.getItem("hour3"));
+    $("#hour4 .description").val(localStorage.getItem("hour4"));
+    $("#hour5 .description").val(localStorage.getItem("hour5"));
+    $("#hour6 .description").val(localStorage.getItem("hour6"));
+    $("#hour7 .description").val(localStorage.getItem("hour7"));
+    $("#hour8 .description").val(localStorage.getItem("hour8"));
+    $("#hour9 .description").val(localStorage.getItem("hour9"));
 
-/* ---- stats.js config ---- */
-
-var count_particles, stats, update;
-stats = new Stats;
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
+    timeTrack();
+})
