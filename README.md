@@ -1,4 +1,4 @@
-# THIRD PARTY APIs CHALLENGE: WORK DAY SCHEDULER | ESTRADA  
+# THIRD PARTY APIs CHALLENGE: WORK DAY PLANNER | ESTRADA  
 Create a simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.  
 ## Acceptance Criteria  
 GIVEN I am using a daily planner to create a schedule  
@@ -30,12 +30,11 @@ Files in the directory or archive:
 * script.js  
 ## Website and Operating instructions
 The site can be accessed at the following hyperlink:  
- https://hmarkestrad.github.io/Work-Day-Scheduler/  
-  
+Site is published at https://hmarkestrad.github.io/Work-Day-Planner/    
 1. You can double click the hyperlink or choose File from a browser menu.  
 2. Then select Open File. Navigate to your HTML file location, highlight the document and click Open.  
 3. You will see your file open in a new tab.  
-
+  
 You can also use a keyboard shortcut to open a file in Chrome. Open a new tab in Chrome, then press Ctrl (Windows) or Cmd (Mac) + O. It will bring up the same Open File menu. Find your HTML file and open it. 
 ## Screenshot:  
 ![PORTFOLIO CHALLENGE - ESTRADA](https://github.com/hmarkestrad/Work-Day-Scheduler/blob/6d53441bf14f567bca8bc7294c883a268a49e541/images/screenshot.png)  
