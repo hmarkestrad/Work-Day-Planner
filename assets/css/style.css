@@ -1,0 +1,84 @@
+/* Open Sans will be the Document fonts */
+body {
+	font-family: 'open_sansregular';
+	line-height: 1.5rem;
+}
+.container {
+	margin-bottom: 2rem;
+	padding-bottom: 2rem;
+}
+textarea {
+	background: transparent;
+	border: none;
+	resize: none;
+	color: #000000;
+}
+.jumbotron {
+	text-align: center;
+	background-color: transparent;
+	color: black;
+	border-radius: 0;
+	border-bottom: 3px solid rgb(90, 90, 90);
+	padding-top: 2.0rem;
+	padding-bottom: 2.0rem;
+	line-height: 1.0rem;
+}
+.description {
+	white-space: pre-wrap;
+	color: #000000;
+}
+.time-block {
+	text-align: center;
+}
+.hour {
+	background-color: #ffffff;
+	color: #000000;
+	padding-top: 30px;
+}
+.past {
+	background-color: #caf4ff;
+}
+.present {
+	font-family: 'open_sansbold';
+	background-color: #5cdeff;
+}
+.future {
+	font-family: 'open_sansregular';
+	background-color: #b3ffb3;
+}
+.saveBtn {
+	background-color: #d6d6d6;
+}
+.saveBtn i:hover {
+	font-size: 20px;
+	transition: all 0.3s ease-in-out;
+}
+.lead-date {
+	font-size: 1.5rem;
+	font-weight: normal;
+	line-height: 1.5rem;
+}
+.col-md-1 {
+	font-family: 'open_sansregular';
+	font-size: 1.0rem;
+	color: #5e5e5e;
+}
+.col-md-10 {
+	font-size: 1.25rem;
+	color: #000000;
+	padding-top: 30px;
+	padding-left: 30px;
+	vertical-align: middle;
+	border-right: 1px solid rgb(0, 0, 0);
+	border-left: 1px solid rgb(0, 0, 0);
+}
+.row {
+	white-space: pre-wrap;
+	vertical-align: middle;
+	border-right: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-left: 1px solid rgb(0, 0, 0);
+}
+.row-top {
+	border-top: 1px solid rgb(0, 0, 0);
+}
